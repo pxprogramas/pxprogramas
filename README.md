@@ -1,7 +1,9 @@
 ## Olá me chamo soares 👋
           
 
-- ALTUALMENTE DESENVOLVIMENTO COM C# (APENAS APRENDENDO RSRS)
+- ALTUALMENTE DESENVOLVIMENTO COM C# (APENAS APRENDENDO RSRS) 
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" width="20" heith="20" />
+          
 - ESTOU PROCURANDO EM COLABORAR NO QUE DER E VIER
 - ESTOU PROCURANDO AJUDA COM DESENVOLVIMENTO DE SISTEMAS NO GERAL
 - PERGUNTE-ME SOBRE QUALQUER COISA
