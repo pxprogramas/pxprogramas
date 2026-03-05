@@ -1,5 +1,5 @@
 ```yaml
-name: generate commit blaster
+name: Commit Blaster
 
 on:
   schedule:
@@ -13,20 +13,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: create animation
+      - name: gerar animação
         run: |
+
           mkdir -p output
+
           cat << 'EOF' > output/commit-blaster.svg
+
           <svg width="900" height="200" xmlns="http://www.w3.org/2000/svg">
 
           <style>
+
           .laser{
-            animation: shoot 2s linear infinite;
+          animation: shoot 2s linear infinite;
           }
 
           @keyframes shoot{
-            0%{transform:translateX(0)}
-            100%{transform:translateX(700px)}
+          0%{transform:translateX(0)}
+          100%{transform:translateX(700px)}
           }
 
           </style>
@@ -34,7 +38,7 @@ jobs:
           <rect x="20" y="90" width="50" height="20" fill="lime"/>
           <rect x="70" y="95" width="10" height="5" fill="lime"/>
 
-          <rect class="laser" x="80" y="97" width="200" height="2" fill="red"/>
+          <rect class="laser" x="80" y="97" width="200" height="3" fill="red"/>
 
           <circle cx="750" cy="100" r="10" fill="green"/>
 
@@ -43,9 +47,10 @@ jobs:
           </text>
 
           </svg>
+
           EOF
 
-      - name: push
+      - name: enviar
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
