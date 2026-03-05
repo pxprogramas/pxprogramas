@@ -1,6 +1,4 @@
-## olá me chamo soares 👋
-
-            <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+## Olá me chamo soares 👋
           
 
 - ALTUALMENTE DESENVOLVIMENTO COM C# (APENAS APRENDENDO RSRS)
