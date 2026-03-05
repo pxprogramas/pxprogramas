@@ -1,46 +1,30 @@
 name: Commit Blaster
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Create animation
+      - name: Create SVG
         run: |
           mkdir -p output
-
-          echo '<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg">
-          <style>
-          .laser { animation: shoot 2s linear infinite; }
-          @keyframes shoot {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(700px); }
-          }
-          </style>
-
-          <rect x="20" y="90" width="50" height="20" fill="lime"/>
-          <rect x="70" y="95" width="10" height="5" fill="lime"/>
-
-          <rect class="laser" x="80" y="97" width="200" height="3" fill="red"/>
-
+          echo '<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="90" width="60" height="20" fill="lime"/>
+          <rect x="80" y="98" width="200" height="4" fill="red"/>
           <circle cx="750" cy="100" r="10" fill="green"/>
-
-          <text x="330" y="40" fill="lime" font-size="22">
+          <text x="260" y="40" fill="lime" font-size="22">
           PXPROGRAMAS COMMIT BLASTER
           </text>
-
           </svg>' > output/commit-blaster.svg
 
-      - name: Commit files
+      - name: Commit
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
           git add output
           git commit -m "update animation" || echo "no changes"
           git push
